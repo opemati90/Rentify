@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "scheme": "rentify",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -16,17 +17,55 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rentify.mobile"
+      "bundleIdentifier": "com.rentify.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to show nearby properties and for map features.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photos to upload property images.",
+        "NSCameraUsageDescription": "This app needs access to your camera to take photos of properties."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.rentify.mobile"
+      "package": "com.rentify.app",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "CAMERA"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": ""
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Rentify to use your location to show nearby properties."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you upload property images.",
+          "cameraPermission": "The app accesses your camera to let you take photos of properties."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-eas-project-id"
+      }
+    },
+    "owner": "your-expo-username"
   }
 }

@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "vite",
+  "regions": ["iad1"],
+  "env": {
+    "VITE_API_URL": "@rentify-api-url",
+    "VITE_FIREBASE_API_KEY": "@rentify-firebase-api-key",
+    "VITE_FIREBASE_AUTH_DOMAIN": "@rentify-firebase-auth-domain",
+    "VITE_FIREBASE_PROJECT_ID": "@rentify-firebase-project-id",
+    "VITE_FIREBASE_STORAGE_BUCKET": "@rentify-firebase-storage-bucket",
+    "VITE_FIREBASE_MESSAGING_SENDER_ID": "@rentify-firebase-messaging-sender-id",
+    "VITE_FIREBASE_APP_ID": "@rentify-firebase-app-id"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
