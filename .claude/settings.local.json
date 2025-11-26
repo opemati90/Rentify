@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx react-native@latest init:*)",
+      "Bash(node --version:*)",
+      "Bash(npm install:*)",
+      "Bash(export NVM_DIR=\"$HOME/.nvm\")",
+      "Bash([ -s \"$NVM_DIR/nvm.sh\" ])",
+      "Bash(. \"$NVM_DIR/nvm.sh\")",
+      "Bash(npm --version:*)",
+      "Bash(npx expo start)",
+      "Bash(EXPO_NO_INSPECTOR=1 npx expo start:*)",
+      "Bash(ulimit -n:*)",
+      "Bash(npx expo start:*)",
+      "Bash(/opt/homebrew/bin/brew install:*)",
+      "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

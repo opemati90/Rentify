@@ -1,0 +1,134 @@
+.properties-page {
+  max-width: 1400px;
+}
+
+.properties-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.properties-page__title {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.properties-page__subtitle {
+  margin: 0;
+  font-size: 16px;
+  color: #64748b;
+}
+
+.properties-page__filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.properties-page__search {
+  flex: 1;
+  min-width: 300px;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.properties-page__search:focus {
+  border-color: #2563eb;
+}
+
+.properties-page__filter-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: capitalize;
+}
+
+.filter-button:hover {
+  background: #f8fafc;
+}
+
+.filter-button.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.property-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.property-cell__image {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  border-radius: 8px;
+  font-size: 24px;
+}
+
+.property-cell__title {
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.property-cell__location {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.properties-page__actions {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.properties-page__actions > p {
+  margin: 0 0 16px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quick-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.quick-action > div {
+  display: flex;
+  gap: 8px;
+}

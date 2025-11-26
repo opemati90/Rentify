@@ -1,0 +1,7 @@
+{
+  "name": "Rentify",
+  "description": "A modern sublet matching application connecting students and professionals with short-term stays.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
