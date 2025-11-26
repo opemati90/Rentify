@@ -76,7 +76,7 @@ describe('Currency Utilities', () => {
 
     it('should round to 2 decimal places', () => {
       expect(convertCurrency(100, 1.234567)).toBe(123.46);
-      expect(convertCurrency(33.33, 3)).toBe(100);
+      expect(convertCurrency(33.33, 3)).toBe(99.99);
     });
 
     it('should handle rate of 1', () => {
