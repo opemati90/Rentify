@@ -1,7 +1,9 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const BASE_URL = process.env.API_BASE_URL || 'http://localhost:3000/api';
 const TIMEOUT = 10000;
+const TOKEN_KEY = '@rentify_auth_token';
 
 const createApiClient = (): AxiosInstance => {
   const client = axios.create({
@@ -13,8 +15,8 @@ const createApiClient = (): AxiosInstance => {
   });
 
   client.interceptors.request.use(
-    (config) => {
-      const token = getStoredToken();
+    async (config) => {
+      const token = await getStoredToken();
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
@@ -25,9 +27,9 @@ const createApiClient = (): AxiosInstance => {
 
   client.interceptors.response.use(
     (response) => response,
-    (error) => {
+    async (error) => {
       if (error.response?.status === 401) {
-        handleUnauthorized();
+        await handleUnauthorized();
       }
       return Promise.reject(error);
     }
@@ -36,13 +38,34 @@ const createApiClient = (): AxiosInstance => {
   return client;
 };
 
-const getStoredToken = (): string | null => {
-  // Implementation depends on storage solution
-  return null;
+const getStoredToken = async (): Promise<string | null> => {
+  try {
+    return await AsyncStorage.getItem(TOKEN_KEY);
+  } catch (error) {
+    console.error('Error getting auth token:', error);
+    return null;
+  }
 };
 
-const handleUnauthorized = (): void => {
-  // Clear token and redirect to login
+export const setStoredToken = async (token: string): Promise<void> => {
+  try {
+    await AsyncStorage.setItem(TOKEN_KEY, token);
+  } catch (error) {
+    console.error('Error storing auth token:', error);
+  }
+};
+
+export const removeStoredToken = async (): Promise<void> => {
+  try {
+    await AsyncStorage.removeItem(TOKEN_KEY);
+  } catch (error) {
+    console.error('Error removing auth token:', error);
+  }
+};
+
+const handleUnauthorized = async (): Promise<void> => {
+  await removeStoredToken();
+  // Navigate to login screen - implementation depends on navigation setup
 };
 
 export const apiClient = createApiClient();
