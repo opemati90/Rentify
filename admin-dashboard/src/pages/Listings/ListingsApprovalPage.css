@@ -1,0 +1,189 @@
+.listings-approval-page {
+  max-width: 1400px;
+}
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.page-title {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.page-subtitle {
+  margin: 0;
+  font-size: 16px;
+  color: #64748b;
+}
+
+.listings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.listings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.listing-item {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.listing-item:hover {
+  transform: translateY(-2px);
+}
+
+.listing-image {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.listing-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.listing-image .badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.listing-info h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.listing-location {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.listing-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.listing-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.listing-type {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.listing-owner,
+.listing-date {
+  margin: 0;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.listing-details {
+  position: sticky;
+  top: 24px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.detail-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.detail-info h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.detail-location {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #64748b;
+}
+
+.detail-price {
+  margin: 0 0 24px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.detail-meta-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-meta-item .label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.detail-meta-item .value {
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.detail-description {
+  margin-bottom: 24px;
+}
+
+.detail-description h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.detail-description p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.detail-actions button {
+  flex: 1;
+}
