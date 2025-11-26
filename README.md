@@ -376,3 +376,4 @@ Potential features to add:
 **Built with ❤️ for the Rentify community**
 
 *Last updated: 2025-01-26*
+# Rentify
